@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Application Task</title>
+    <title>TASKier Menu</title>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
@@ -17,7 +17,10 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">Task</a>
+            <a class="navbar-brand" href="#page-top">TASKier</a>
+            <a class="navbar-brand" href="item.html">Menu</a>
+            <a class="navbar-brand" href="tasks.html">Vos Tâches</a>
+            <a class="navbar-brand" href="stat.html">Vos Stats</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -28,16 +31,25 @@
     </nav>
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">
-                <!- Afficher le titre de la tâche ici ->
+            <h1>
+                Hello <span id="prenom"></span>
             </h1>
         </div>
     </header>
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <div id="app">
-                <!-- utiliser le javascript pour afficher les détails de la tâche -->
-            </div>
+    <section class="page-section menu" id="menu">
+        <div class="flex menu">
+            <ul class="d-flex align-items-center">
+                <li>
+                <a href="index.html">NOUVEAU PROFIL</a>
+                </li>   
+                <li>
+                <a href="stat.html">VOS STATS</a>
+                </li>
+                <li>
+                    <a href="tasks.html">VOS TÂCHES</a>
+                </li>
+            </ul>
+
         </div>
     </section>
     <div class="copyright py-4 text-center text-white">

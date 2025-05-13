@@ -87,6 +87,7 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
 }
 
 hr {
@@ -11506,4 +11507,29 @@ html {
 
 .copyright {
   background-color: #1a252f;
+}
+
+.menu ul {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu ul li {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+.menu ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+}
+.menu ul li a:hover {
+    border-bottom: 2px solid #1a252f;
+  border-radius: 5%;
 }

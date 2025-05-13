@@ -17,7 +17,10 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">Liste des tâches</a>
+            <a class="navbar-brand" href="#page-top">TASKier</a>
+            <a class="navbar-brand" href="item.html">Menu</a>
+            <a class="navbar-brand" href="tasks.html">Vos Tâches</a>
+            <a class="navbar-brand" href="stat.html">Vos Stats</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -38,13 +41,27 @@
             <div id="app">
                 <!-- utiliser le javascript pour afficher la liste des tâches ici -->
             </div>
-        </div>
+        <button id="delete-selected-todos" class="btn btn-danger btn-xl mb-4" style="display: none;">Supprimer les tâches sélectionnées</button>
+        <form id="formnewtask">
+            <h4>Ajouter une nouvelle tâche</h4>
+            <div class="mb-3">
+                <label for="newtasktext" class="form-label">Description de la tâche</label>
+                <input type="text" id="newtasktext" class="form-control" placeholder="Titre ou description" required />
+            </div>
+             <div class="mb-3">
+                 <label for="newtasktag" class="form-label">Tags (séparés par des virgules)</label>
+                 <input type="text" id="newtasktag" class="form-control" placeholder="Tag1, Tag2" />
+             </div>
+            <button type="button" id="addtodo" class="btn btn-primary btn-xl">Ajouter</button>
+        </form>
+    </div>
     </section>
     <div class="copyright py-4 text-center text-white">
         <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/stats.js"></script>
+    <script src="js/tasks.js"></script>
 </body>
 
 </html>

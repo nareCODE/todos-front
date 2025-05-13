@@ -17,7 +17,10 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">Stastistiques</a>
+            <a class="navbar-brand" href="#page-top">TASKier</a>
+            <a class="navbar-brand" href="item.html">Menu</a>
+            <a class="navbar-brand" href="tasks.html">Vos Tâches</a>
+            <a class="navbar-brand" href="stat.html">Vos Stats</a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +37,11 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <div id="app">
-                <!-- utiliser le javascript pour afficher les statistiques -->
+              <div id="stats-container">
+              <p>Total Todos: <span id="total-todos"></span></p>
+              <p>Completed Todos: <span id="completed-todos"></span></p>
+              <p>Pending Todos: <span id="pending-todos"></span></p>
+              </div>
             </div>
         </div>
     </section>
