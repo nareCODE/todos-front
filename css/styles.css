@@ -11533,3 +11533,8 @@ html {
     border-bottom: 2px solid #1a252f;
   border-radius: 5%;
 }
+
+.delete-icon:hover {
+  cursor:pointer;
+  color: red
+}

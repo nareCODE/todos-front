@@ -71,10 +71,7 @@ function displayTodos(todos) {
 
     const todoList = document.createElement('ul');
     todoList.classList.add('list-unstyled'); 
-
-    console.log("Attaching click event listener to todoList for delegation."); 
     todoList.addEventListener('click', async (event) => {
-        console.log("Click event triggered on todoList."); 
         console.log("Event target:", event.target);
 
         
@@ -92,8 +89,8 @@ function displayTodos(todos) {
     });
 
     
-    console.log("Attaching dblclick event listener to todoList for text editing delegation."); 
-     todoList.addEventListener('dblclick', (event) => {
+   
+         todoList.addEventListener('dblclick', (event) => {
          console.log("DblClick event triggered on todoList.");
          const textSpan = event.target.closest('.todo-text'); 
          if (textSpan) {
@@ -196,15 +193,13 @@ function updateBulkDeleteButtonState() {
         const appDiv = document.getElementById('app');
         if (appDiv) {
             
-            const selectedCheckboxes = appDiv.querySelectorAll('input[type="checkbox"]:checked');
+            const selectedCheckboxes = appDiv.querySelectorAll('input[type="checkbox"]:checked'); 
             if (selectedCheckboxes.length > 0) {
                 bulkDeleteButton.style.display = 'block'; 
             } else {
                 bulkDeleteButton.style.display = 'none'; 
             }
-        } else {
-             bulkDeleteButton.style.display = 'none'; 
-        }
+        } 
     }
 }
 
@@ -274,7 +269,7 @@ async function saveEdit(inputElement, todoId, textSpanElement) {
 
     
     if (newText === originalText || newText === '') {
-        console.log(`Text for task ID ${todoId} is unchanged or empty. Reverting UI.`);
+        console.log(`Text for task ID ${todoId} is unchanged or empty.`);
         
         if (inputElement.parentElement) { 
              inputElement.remove(); 
@@ -352,7 +347,7 @@ async function saveEdit(inputElement, todoId, textSpanElement) {
                   textSpanElement.style.textDecoration = 'none'; 
                   textSpanElement.style.color = ''; 
              } else {
-                  console.warn("Could not find parent todo item after successful update.");
+                  console.warn("Could not find parent .");
              }
              textSpanElement.style.display = ''; 
         }
@@ -363,7 +358,7 @@ async function saveEdit(inputElement, todoId, textSpanElement) {
              console.warn("Input element was removed before saveEdit finished.");
         }
 
-         inputElement.dataset.saving = 'false'; // Reset flag
+         inputElement.dataset.saving = 'false'; 
 
     } catch (error) {
         console.error("Error saving task text:", error);
@@ -386,7 +381,7 @@ async function saveEdit(inputElement, todoId, textSpanElement) {
              }
         }
 
-         inputElement.dataset.saving = 'false'; // Reset flag
+         inputElement.dataset.saving = 'false'; 
 
     }
 }
@@ -441,7 +436,7 @@ async function handleAddTodo() {
 
      if (!taskTextInput || !tagsTextInput) {
          console.error("Form input elements not found!");
-         alert("Erreur: Champs de formulaire introuvables.");
+         alert("Erreur: Texte introuvable.");
          return;
      }
 
@@ -454,7 +449,7 @@ async function handleAddTodo() {
          return;
      }
 
-     const tagsArray = tagsString.split(',')
+     const tagsArray = tagsString.split(', ')
                                .map(tag => tag.trim())
                                .filter(tag => tag !== '');
 
@@ -530,7 +525,7 @@ async function handleDeleteSelectedTodos() {
      const bulkDeleteButton = document.getElementById('delete-selected-todos');
      if (bulkDeleteButton) {
          bulkDeleteButton.disabled = true;
-         bulkDeleteButton.textContent = `Suppression (${selectedTodoIds.length})...`; // Optional: give feedback
+         bulkDeleteButton.textContent = `Suppression (${selectedTodoIds.length})...`;
      }
 
 
@@ -559,11 +554,11 @@ async function handleDeleteSelectedTodos() {
 
             }
             console.log(`Suppression en masse réussie pour l'ID: ${id}`);
-             return response.json().catch(() => ({})).then(data => ({ id: id, status: 'fulfilled', data: data })); // Marque comme réussi
+             return response.json().catch(() => ({})).then(data => ({ id: id, status: 'fulfilled', data: data })); 
         }).catch(error => {
             
             console.error(`Erreur réseau ou inattendue pour l'ID ${id} (suppression en masse):`, error);
-             return { id: id, status: 'failed', error: `Network or unexpected error: ${error.message}` }; // Marque comme échoué réseau
+             return { id: id, status: 'failed', error: `Network or unexpected error: ${error.message}` }; 
         });
     });
 
