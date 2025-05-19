@@ -8,7 +8,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
       localStorage.setItem('userName', prenom);
   
       
-      window.location.href = 'item.html';
+      window.location.href = 'tasks.html';
     } else {
       
       alert('Please enter your name.');
